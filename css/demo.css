@@ -33,9 +33,24 @@ h1 span {
     text-shadow: 0 0 3px #fff;
 }
 
-.center {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.outer-container {
+    position : absolute;
+    display: table;
+    width: 100%; /* This could be ANY width */
+    height: 100%; /* This could be ANY height */
+    background: #ccc;
+}
+
+.inner-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.centered-content {
+    display: inline-block;
+    text-align: left;
+    background: #fff;
+    padding : 20px;
+    border : 1px solid #000;
 }
