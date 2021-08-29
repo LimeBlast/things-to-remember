@@ -33,17 +33,21 @@
             <div class="outer-container">
                 <div class="inner-container">
                     <div class="centered-content">
-                        <h2>What’s on your mind?</h2>
+                        <h2>The kickstart question:</h2>
+                        <h3>“What’s on your mind?”</h3>
                     </div>
                 </div>
             </div>
         </div>
         <div class="bx-container">
-            <img src="images/3.jpg" title="What’s on your mind?"/>
-            <img src="images/8.jpg" title="And what else?"/>
-            <img src="images/14.jpg" title="What’s the real challenge here for you?"/>
-            <img src="images/16.jpg" title="What do you want?"/>
-            <img src="images/19.jpg" title="How can I help?"/>
+            <img src="images/3.jpg" title="<h2>The kickstart question:</h2><h3>“What’s on your mind?”</h3>"/>
+            <img src="images/8.jpg" title="<h2>The AWE question:</h2><h3>“And what else?”</h3>"/>
+            <img src="images/11.jpg" title="<h2>The focus question:</h2><h3>“What's the real challenge here for you?”</h3>"/>
+            <img src="images/14.jpg" title="<h2>The foundation question:</h2><h3>“What do you want?”</h3>"/>
+            <img src="images/16.jpg" title="<h2>The lazy question:</h2><h3>“How can I help?”</h3>"/>
+            <img src="images/19.jpg" title="<h2>The strategic question:</h2><h3>“If you say yes to this, what are you saying no to?”</h3>"/>
+            <img src="images/23.jpg" title="<h2>The learning question:</h2><h3>“What was most useful to you?”</h3>"/>
+
         </div>
         <div class="bx-overlay"></div>
     </div>
@@ -197,7 +201,7 @@
                 if (supportCanvas) {
 
                     $.when($title.fadeOut()).done(function () {
-                        $title.text($bxNextImage.attr('title'));
+                        $title.html($bxNextImage.attr('title'));
                     });
 
                     $bxCanvas.css('z-index', 100).css('visibility', 'visible');
@@ -248,7 +252,7 @@
                 // if canvas is not shown just work with the bg images
                 else {
 
-                    $title.hide().text($bxNextImage.attr('title')).fadeIn(animOptions.speed);
+                    $title.hide().html($bxNextImage.attr('title')).fadeIn(animOptions.speed);
                     $.when($bxNextImage.css('z-index', 102).fadeIn(animOptions.speed)).done(function () {
 
                         current = pos;
@@ -271,7 +275,7 @@
               // total number of bg images
               bxImgsCount = $bxImgs.length,
               // the title for the current image
-              $title = $bxWrapper.find('h2:first'),
+              $title = $bxWrapper.find('.centered-content:first'),
               // current image's index
               current = 0,
               // variation to show the image:
@@ -285,7 +289,7 @@
               // check if canvas is supported
               supportCanvas = Modernizr.canvas,
               // slideshow
-              slideshow_interval = 10 * 60 * 1000, // 10 minutes
+              slideshow_interval = 10 * 1000, // 10 minutes
               slideshow_time,
 
               // init function
